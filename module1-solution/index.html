@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold;}
+    </style>
+  </head>
+
+<body>
+   <div class="container">
+     <h1>Lunch Checker</h1>
+      <div ng-controller='LunchCheckController'>
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             class="form-control"
+             ng-model="items"
+             style="border-color:{{color}}">
+             <!--Empty item is not considered a valid item-->
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="count()">Check If Too Much</button>
+         </div>
+         <div class="form-group message" >
+           <font color=red>{{validation_message}}</font>
+           <font color=green>{{message}}</font>
+         </div>
+       </div>
+   </div>
+
+</body>
+</html>
